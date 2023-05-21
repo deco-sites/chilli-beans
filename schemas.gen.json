@@ -59,6 +59,7 @@
               "deco-sites/std/loaders/vtex/user.ts",
               "deco-sites/std/loaders/vtex/wishlist.ts",
               "./islands/AddToCartButton.tsx",
+              "./islands/BackToTop.tsx",
               "./islands/HeaderButton.tsx",
               "./islands/HeaderModals.tsx",
               "./islands/HeaderSearchbar.tsx",
@@ -7502,7 +7503,7 @@
       "required": [],
       "title": "OptionalColors"
     },
-    "ZGVjby1zaXRlcy9jaGlsbGktYmVhbnMvc2VjdGlvbnMvRGVzaWduU3lzdGVtLnRzeA==@Colors&b966eeb0bbdb3699ee11b12ce6a39cc4": {
+    "ZGVjby1zaXRlcy9jaGlsbGktYmVhbnMvc2VjdGlvbnMvRGVzaWduU3lzdGVtLnRzeA==@0a38979a0455dcc4ae9c5629fad2a58c&Colors": {
       "allOf": [
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9jaGlsbGktYmVhbnMvc2VjdGlvbnMvRGVzaWduU3lzdGVtLnRzeA==@Colors"
@@ -7518,7 +7519,7 @@
           "required": []
         }
       ],
-      "title": "Colors&b966eeb0bbdb3699ee11b12ce6a39cc4"
+      "title": "0a38979a0455dcc4ae9c5629fad2a58c&Colors"
     },
     "ZGVjby1zaXRlcy9jaGlsbGktYmVhbnMvc2VjdGlvbnMvRGVzaWduU3lzdGVtLnRzeA==@Miscellaneous": {
       "type": "object",
@@ -7621,7 +7622,7 @@
       "type": "object",
       "properties": {
         "colors": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9jaGlsbGktYmVhbnMvc2VjdGlvbnMvRGVzaWduU3lzdGVtLnRzeA==@Colors&b966eeb0bbdb3699ee11b12ce6a39cc4",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9jaGlsbGktYmVhbnMvc2VjdGlvbnMvRGVzaWduU3lzdGVtLnRzeA==@0a38979a0455dcc4ae9c5629fad2a58c&Colors",
           "title": "Colors"
         },
         "miscellaneous": {
@@ -7815,6 +7816,59 @@
         "features"
       ],
       "title": "deco-sites/chilli-beans/components/ui/Features.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9jaGlsbGktYmVhbnMvY29tcG9uZW50cy9mb290ZXIvRm9vdGVyLnRzeA==@SocialMedia": {
+      "type": "object",
+      "properties": {
+        "imageSrc": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Image Src"
+        },
+        "imageAlt": {
+          "type": "string",
+          "title": "Image Alt"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href"
+        }
+      },
+      "required": [
+        "imageSrc",
+        "imageAlt",
+        "href"
+      ],
+      "title": "SocialMedia"
+    },
+    "ZGVjby1zaXRlcy9jaGlsbGktYmVhbnMvY29tcG9uZW50cy9mb290ZXIvRm9vdGVyLnRzeA==@SocialMedia[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9jaGlsbGktYmVhbnMvY29tcG9uZW50cy9mb290ZXIvRm9vdGVyLnRzeA==@SocialMedia"
+      },
+      "title": "SocialMedia[]"
+    },
+    "ZGVjby1zaXRlcy9jaGlsbGktYmVhbnMvY29tcG9uZW50cy9mb290ZXIvRm9vdGVyLnRzeA==@ImageLinkProps": {
+      "type": "object",
+      "properties": {
+        "imageSrc": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Image Src"
+        },
+        "imageAlt": {
+          "type": "string",
+          "title": "Image Alt"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href"
+        }
+      },
+      "required": [
+        "imageSrc",
+        "imageAlt",
+        "href"
+      ],
+      "title": "ImageLinkProps"
     },
     "ZGVjby1zaXRlcy9jaGlsbGktYmVhbnMvY29tcG9uZW50cy9mb290ZXIvRm9vdGVyLnRzeA==@StringItem": {
       "type": "object",
@@ -8027,6 +8081,14 @@
     "ZGVjby1zaXRlcy9jaGlsbGktYmVhbnMvY29tcG9uZW50cy9mb290ZXIvRm9vdGVyLnRzeA==@Props": {
       "type": "object",
       "properties": {
+        "SocialMedias": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9jaGlsbGktYmVhbnMvY29tcG9uZW50cy9mb290ZXIvRm9vdGVyLnRzeA==@SocialMedia[]",
+          "title": " Social Medias"
+        },
+        "logoImage": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9jaGlsbGktYmVhbnMvY29tcG9uZW50cy9mb290ZXIvRm9vdGVyLnRzeA==@ImageLinkProps",
+          "title": "Logo Image"
+        },
         "sections": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9jaGlsbGktYmVhbnMvY29tcG9uZW50cy9mb290ZXIvRm9vdGVyLnRzeA==@Section[]",
           "title": "Sections"
@@ -8857,7 +8919,11 @@
         },
         "name": {
           "type": "string",
-          "title": "Name"
+          "title": "The audience name (will be used on cookies).",
+          "description": "Add a meaningful short word for the audience name.",
+          "maxLength": 22,
+          "minLength": 3,
+          "pattern": "^[A-Za-z0-9_]+$"
         },
         "routes": {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Route[]",
@@ -8973,7 +9039,7 @@
       ],
       "title": "WorkflowRef"
     },
-    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@95abd76f92dd138f258080286726977e|WorkflowRef": {
+    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@6fafe0f553db3c0685828404a37be338|WorkflowRef": {
       "anyOf": [
         {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef"
@@ -8991,13 +9057,13 @@
           ]
         }
       ],
-      "title": "95abd76f92dd138f258080286726977e|WorkflowRef"
+      "title": "6fafe0f553db3c0685828404a37be338|WorkflowRef"
     },
     "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@Props": {
       "type": "object",
       "properties": {
         "workflow": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@95abd76f92dd138f258080286726977e|WorkflowRef",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@6fafe0f553db3c0685828404a37be338|WorkflowRef",
           "title": "Workflow"
         },
         "id": {
@@ -10401,6 +10467,22 @@
             "./islands/AddToCartButton.tsx"
           ],
           "default": "./islands/AddToCartButton.tsx"
+        }
+      }
+    },
+    "Li9pc2xhbmRzL0JhY2tUb1RvcC50c3g=": {
+      "title": "./islands/BackToTop.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/BackToTop.tsx"
+          ],
+          "default": "./islands/BackToTop.tsx"
         }
       }
     },
@@ -12150,6 +12232,9 @@
         },
         {
           "$ref": "#/definitions/Li9pc2xhbmRzL0FkZFRvQ2FydEJ1dHRvbi50c3g="
+        },
+        {
+          "$ref": "#/definitions/Li9pc2xhbmRzL0JhY2tUb1RvcC50c3g="
         },
         {
           "$ref": "#/definitions/Li9pc2xhbmRzL0hlYWRlckJ1dHRvbi50c3g="
